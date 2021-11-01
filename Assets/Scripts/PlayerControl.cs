@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class PlayerControl : MonoBehaviour
@@ -24,6 +25,7 @@ public class PlayerControl : MonoBehaviour
     Color alpha;
     float shootingTime;
     public GameObject prefab;
+    public Button Btn;  
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
@@ -55,6 +57,8 @@ public class PlayerControl : MonoBehaviour
         else alpha.a=0.5f;
         GameObject.Find("Student").GetComponent<SpriteRenderer>().color = alpha;
         shootingTime+=Time.deltaTime;
+        if(shootingTime>1) Btn.interactable=true;
+        else Btn.interactable=false;
     }
     void FixedUpdate()
     {
