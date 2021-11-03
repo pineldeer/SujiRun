@@ -35,7 +35,16 @@ public class Clone_Bullet : MonoBehaviour
             //invinTime = 0;
             Invoke("Thistroy",0.03f);
         }
+        if (collision.CompareTag("Enemy"))
+        {
+            //GameObject.Find("GameManager").GetComponent<GM1>().MHP_Change(-1);
+            //GameObject.Find("GameManager").GetComponent<GM1>().MHP_Display();
+            //Debug.Log("장애물 맞음");
+            //invinTime = 0;
+            Invoke("Thistroy", 0.03f);
+        }
     }
+    
     void Thistroy()
     {
         Destroy(gameObject);

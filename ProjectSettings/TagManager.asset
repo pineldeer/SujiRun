@@ -8,6 +8,8 @@ TagManager:
   - Obstacle
   - Bullet
   - Performance
+  - Enemy
+  - Unbreakable
   layers:
   - Default
   - TransparentFX
