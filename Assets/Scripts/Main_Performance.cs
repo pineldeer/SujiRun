@@ -19,6 +19,7 @@ public class Main_Performance : MonoBehaviour
     }
     public void Summon_Per()
     {
+        //Debug.Log(num);
         Instantiate(prefab_Per, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity, transform);
         ;
     }

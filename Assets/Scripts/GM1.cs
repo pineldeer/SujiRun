@@ -17,10 +17,10 @@ public class GM1 : MonoBehaviour
     float timer;
     string currentEvent;
     public int MHP;
-    public int[] order=new int[14] {0,0, 1,1,2,2,3,3,4,4,5,5,6,6};
+    public int[] order=new int[14];
     //public float[] scores= new float[10]{ 0,};
-    int[] between = new int[13];
-    int[] sumtween = new int[14];
+    int[] between = new int[20];
+    int[] sumtween = new int[20];
     //public Image myImage;
     //public float currentTime;
     void Start()
@@ -32,7 +32,11 @@ public class GM1 : MonoBehaviour
         currentEvent="중간고사";
         MHP=6;
 
-
+        for(int i=0;i<7;i++)
+        {
+            order[i*2]=i;
+            order[i*2+1]=i;
+        }
         for(int i=0;i<13;i++) between[i]=1;
         for(int i=0;i<32;i++) between[Random.Range(0,13)]++;
         sumtween[0]=5;
@@ -46,7 +50,7 @@ public class GM1 : MonoBehaviour
             order[target]=order[i];
             order[i]=temp;
         }
-        //for (int i = 0; i < 14; i++) Debug.Log(order [i]);
+        for (int i = 0; i < 14; i++) Debug.Log(order [i]);
         for(int i=0;i<14;i++) Invoke("SummP",sumtween[i]);
     }
 

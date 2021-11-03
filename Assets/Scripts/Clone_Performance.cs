@@ -6,7 +6,7 @@ public class Clone_Performance : MonoBehaviour
 {
     // Start is called before the first frame update
     int thisnum;
-    int subject;
+    int subject=0;
     int pattern;
     float stan;
     void Start()
@@ -15,6 +15,7 @@ public class Clone_Performance : MonoBehaviour
         subject= GameObject.Find("GameManager").GetComponent<GM1>().order[thisnum];
 
         this.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Performances/"+subject) as Sprite;
+        Debug.Log(thisnum);
         Debug.Log(subject);
         pattern=Random.Range(1,2);
         stan=GameObject.Find("GameManager").GetComponent<GM1>().speed_Background;

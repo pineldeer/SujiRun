@@ -112,7 +112,7 @@ public class PlayerControl : MonoBehaviour
         if (collision.gameObject.tag=="Floor")
         {
             jumpCount=2;
-            Debug.Log("r닿음");
+            //Debug.Log("r닿음");
             GameObject.Find("GameManager").GetComponent<GM1>().jumpTime=99;
             rbody.velocity = new Vector2(0.0f, 0.0f);
         }
@@ -124,7 +124,7 @@ public class PlayerControl : MonoBehaviour
         {
             GameObject.Find("GameManager").GetComponent<GM1>().MHP_Change(-1);
             GameObject.Find("GameManager").GetComponent<GM1>().MHP_Display();
-            Debug.Log("장애물 맞음");
+            //Debug.Log("장애물 맞음");
             invinTime=0;
 
         }
