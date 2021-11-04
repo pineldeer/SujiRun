@@ -34,6 +34,7 @@ public class Teacher : MonoBehaviour
             yield return null;
         }
         this.gameObject.tag = "Enemy";
+        InvokeRepeating("Ch", 0, 3f);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -57,7 +58,10 @@ public class Teacher : MonoBehaviour
         Invoke("Emergence", 10.0f);
 
     }
-
+    void Ch()
+    {
+        GameObject.Find("Chalk").GetComponent<Chalk>().Summon_chalk();
+    }
     /*
     public void FadeIn()
     {
