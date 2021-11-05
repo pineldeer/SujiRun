@@ -34,7 +34,7 @@ public class Teacher : MonoBehaviour
             yield return null;
         }
         this.gameObject.tag = "Enemy";
-        InvokeRepeating("Ch", 0, 3f);
+        InvokeRepeating("Ch", 0, 3.5f);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -56,6 +56,8 @@ public class Teacher : MonoBehaviour
         this.gameObject.tag = "Unbreakable";
         this.transform.position = new Vector3(10.5f, -1.5f, -7);
         Invoke("Emergence", 10.0f);
+        CancelInvoke("Ch");
+        GameObject.Find("Chalk").GetComponent<Chalk>().Chalktroy();
 
     }
     void Ch()
