@@ -27,11 +27,7 @@ public class Clone_Light : MonoBehaviour
             yield return null;
         }
         L_alpha.a = 1;
-        //alpha.a = 0;
         this.GetComponent<SpriteRenderer>().color = L_alpha;
-        //this.GetComponent<SpriteRenderer>().color = alpha;
-        //Range.gameObject.tag = "Obstacle";
-        //Range.transform.position = new Vector3(0, 0, 0);
         while (_time < 2f)
         {
             this.transform.localScale = new Vector3(30, Mathf.Lerp(1, 30, _time * 2 - 3f), 1);
@@ -40,10 +36,6 @@ public class Clone_Light : MonoBehaviour
             _time += Time.deltaTime;
             yield return null;
         }
-        //Range.gameObject.tag = "Unbreakable";
-        //L_alpha.a = 1;
-        //alpha.a = 0;
-        //Light.GetComponent<SpriteRenderer>().color = L_alpha;
         Destroy(gameObject);
 
 

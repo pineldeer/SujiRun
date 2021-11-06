@@ -21,14 +21,11 @@ public class GM1 : MonoBehaviour
     public float[] scores= new float[7];
     int[] between = new int[20];
     int[] sumtween = new int[20];
-    //public Image myImage;
-    //public float currentTime;
     void Start()
     {
         canJump = true;
         jumpTime=0;
         timer=0;
-        //GameObject.Find("MentalHealth").GetComponent<SpriteRenderer>().sprite= Resources.Load<Sprite>("Lifes/Life5") as Sprite;
         currentEvent="중간고사";
         MHP=6;
 
@@ -42,7 +39,6 @@ public class GM1 : MonoBehaviour
         for(int i=0;i<32;i++) between[Random.Range(0,13)]++;
         sumtween[0]=5;
         for(int i=0;i<13;i++) sumtween[i+1]=sumtween[i]+between[i];
-        //for(int i=0;i<14;i++) Debug.Log(sumtween[i]);
         for(int i=0;i<13;i++)
         {
             int temp;
@@ -65,11 +61,9 @@ public class GM1 : MonoBehaviour
         }
         else jumpTime=0;
         
-        //currentTime+=Time.deltaTime;
         jumpTime+=Time.deltaTime;
 
         RemainingTime.text=currentEvent+" "+(60-(int)timer)+"일 전";
-        //Debug.Log(scores);
     }
     public void LeftDown(){ inputLeft=true; }
     public void LeftUp() { inputLeft = false; }

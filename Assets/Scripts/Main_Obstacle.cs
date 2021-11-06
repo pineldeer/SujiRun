@@ -8,11 +8,8 @@ public class Main_Obstacle : MonoBehaviour
     public GameObject prefab1;
     public GameObject prefab2;
     public GameObject prefab3;
-    //Instantiate(prefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity, transform)
     void Start()
     {
-        //Instantiate(prefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity, transform);
-        //Debug.Log(Random.Range(1,3));
         Summon_Obstacle();
     }
 
@@ -39,7 +36,6 @@ public class Main_Obstacle : MonoBehaviour
             default:
                 break;
         }
-        //Instantiate(prefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity, transform);
         Invoke("Summon_Obstacle", Random.Range(1,4 ));
         
     }

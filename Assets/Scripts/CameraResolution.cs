@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraResolution : MonoBehaviour
+public class CameraResolution : MonoBehaviour//카메라 비율 고정하는 스크립트. 인터넷에서 퍼옴
 {
     void Start()
     {

@@ -50,7 +50,6 @@ public class PlayerControl : MonoBehaviour
         if(right) horMove++;
         if(jump) isJumping=true;
         if(shoot) isShooting=true;
-        //Debug.Log("각도 끌림 계수:"+rbody.angularDrag+ " 각속도:"+rbody.angularVelocity + " 선형 속도:"+rbody.velocity);
         invinTime+=Time.deltaTime;
         alpha= GameObject.Find("Student").GetComponent<SpriteRenderer>().color;
         if (invinTime>1) alpha.a=1;
@@ -105,14 +104,12 @@ public class PlayerControl : MonoBehaviour
         Debug.Log("발사");
         shootingTime=0;
         GameObject.Find("BulletLocation").GetComponent<Main_Bullet>().NewShoot(this.transform.position.x,this.transform.position.y,this.transform.position.z);
-        //Instantiate(prefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity, transform);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag=="Floor")
         {
             jumpCount=2;
-            //Debug.Log("r닿음");
             GameObject.Find("GameManager").GetComponent<GM1>().jumpTime=99;
             rbody.velocity = new Vector2(0.0f, 0.0f);
         }
@@ -124,7 +121,6 @@ public class PlayerControl : MonoBehaviour
         {
             GameObject.Find("GameManager").GetComponent<GM1>().MHP_Change(-1);
             GameObject.Find("GameManager").GetComponent<GM1>().MHP_Display();
-            //Debug.Log("장애물 맞음");
             invinTime=0;
 
         }
