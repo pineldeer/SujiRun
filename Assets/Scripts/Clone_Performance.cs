@@ -37,6 +37,7 @@ public class Clone_Performance : MonoBehaviour
                 this.transform.Translate(-1 * stan * Time.deltaTime*1.5f,0,0);
                 break;
         }
+        Debug.Log(this.transform.position.x);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -46,6 +47,7 @@ public class Clone_Performance : MonoBehaviour
             //GameObject.Find("GameManager").GetComponent<GM1>().MHP_Display();
             //Debug.Log("장애물 맞음");
             //invinTime = 0;
+            GameObject.Find("GameManager").GetComponent<GM1>().scores[subject] += Mathf.Lerp(0, 1, (this.transform.position.x+9)/6);
             Invoke("Thistroy", 0.03f);
         }
     }

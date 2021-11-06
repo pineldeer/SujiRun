@@ -7,6 +7,8 @@ public class Teacher : MonoBehaviour
     // Start is called before the first frame update
     //public GameObject teacher;
     float _time=0f;
+    public GameObject prefab;
+    GameObject inst;
     //float F_Time=1f;
     void Start()
     {
@@ -57,12 +59,13 @@ public class Teacher : MonoBehaviour
         this.transform.position = new Vector3(10.5f, -1.5f, -7);
         Invoke("Emergence", 10.0f);
         CancelInvoke("Ch");
-        GameObject.Find("Chalk").GetComponent<Chalk>().Chalktroy();
+        Destroy(inst);
 
     }
     void Ch()
     {
-        GameObject.Find("Chalk").GetComponent<Chalk>().Summon_chalk();
+        //GameObject.Find("Chalk").GetComponent<Chalk>().Summon_chalk();
+        inst=Instantiate(prefab, new Vector3(0, 100, 0), Quaternion.identity, transform);
     }
     /*
     public void FadeIn()

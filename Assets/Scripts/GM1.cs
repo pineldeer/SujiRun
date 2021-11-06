@@ -18,7 +18,7 @@ public class GM1 : MonoBehaviour
     string currentEvent;
     public int MHP;
     public int[] order=new int[14];
-    //public float[] scores= new float[10]{ 0,};
+    public float[] scores= new float[7];
     int[] between = new int[20];
     int[] sumtween = new int[20];
     //public Image myImage;
@@ -36,6 +36,7 @@ public class GM1 : MonoBehaviour
         {
             order[i*2]=i;
             order[i*2+1]=i;
+            scores[i]=0;
         }
         for(int i=0;i<13;i++) between[i]=1;
         for(int i=0;i<32;i++) between[Random.Range(0,13)]++;
@@ -68,6 +69,7 @@ public class GM1 : MonoBehaviour
         jumpTime+=Time.deltaTime;
 
         RemainingTime.text=currentEvent+" "+(60-(int)timer)+"일 전";
+        //Debug.Log(scores);
     }
     public void LeftDown(){ inputLeft=true; }
     public void LeftUp() { inputLeft = false; }
