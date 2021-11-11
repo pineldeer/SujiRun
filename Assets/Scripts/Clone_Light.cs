@@ -30,7 +30,7 @@ public class Clone_Light : MonoBehaviour
         this.GetComponent<SpriteRenderer>().color = L_alpha;
         while (_time < 2f)
         {
-            this.transform.localScale = new Vector3(30, Mathf.Lerp(1, 30, _time * 2 - 3f), 1);
+            this.transform.localScale = new Vector3(30, Mathf.Lerp(1, 300, _time * 2 - 3f), 1);
             L_alpha.a = Mathf.Lerp(1, 0f, _time * 2 - 3f);
             this.GetComponent<SpriteRenderer>().color = L_alpha;
             _time += Time.deltaTime;
