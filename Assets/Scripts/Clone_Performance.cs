@@ -15,8 +15,8 @@ public class Clone_Performance : MonoBehaviour
         subject= GameObject.Find("GameManager").GetComponent<GM1>().order[thisnum];
 
         this.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Performances/"+subject) as Sprite;
-        Debug.Log(thisnum);
-        Debug.Log(subject);
+        //Debug.Log(thisnum);
+        //Debug.Log(subject);
         pattern=Random.Range(1,2);
         stan=GameObject.Find("GameManager").GetComponent<GM1>().speed_Background;
         switch(pattern)
@@ -36,7 +36,7 @@ public class Clone_Performance : MonoBehaviour
                 this.transform.Translate(-1 * stan * Time.deltaTime*1.5f,0,0);
                 break;
         }
-        Debug.Log(this.transform.position.x);
+        //Debug.Log(this.transform.position.x);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
